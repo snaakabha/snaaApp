@@ -26,12 +26,12 @@ const App = () => {
     <View style={styles.container}>
       <View style={styles.flexBox}>
         <View>
-          <Text>name: Sanaa Medlij</Text>
+          <Text>name: Snaa Medlij</Text>
           <Text>Bd: 24-01-2001</Text>
         </View>
         <View style={styles.RedBox}></View>
       </View>
-      <View style={styles.footer}>
+      <View style={styles.footer}> 
         <Text>My First UI</Text>
       </View>
     </View>
