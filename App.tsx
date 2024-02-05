@@ -1,50 +1,64 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import ClothesItem from "./src/cocomponents/ClothesItem"
 import React from 'react'
+import {clothes} from './src/res/data';
 
 
-const styles = StyleSheet.create({
-  app:{
-      flex: 1,
-      backgroundColor: "rgb(255,255,255)",
-  },
-  container: {
-    borderWidth: 1,
-    borderColor: "black",
-    alignSelf: 'center', padding: 12,
-    marginTop: 300,
-  },
-  RedBox: {
-    backgroundColor: "red",
-    width: 30
-  },
-  flexBox: {
-    flexDirection: "row",
-    gap: 15
+// const styles = StyleSheet.create({
+//   app:{
+//       flex: 1,
+//       backgroundColor: "rgb(255,255,255)",
+//   },
+//   container: {
+//     // borderWidth: 1,
+//     // borderColor: "black",
+//     // alignSelf: 'center', padding: 12,
+//     // // marginTop: 300,
+//   },
+//   RedBox: {
+//     backgroundColor: "red",
+//     width: 30
+//   },
+//   flexBox: {
+//     flexDirection: "row",
+//     gap: 15
     
   
-  },
-  footer: {
-    alignSelf: 'center'
-  }, 
+//   },
+//   footer: {
+//     alignSelf: 'center'
+//   }, 
+//   Colortext:{
+//     color: "black"
 
- 
-})
+//   }
+// })
 const App = () => {
   return (
-    <View style={styles.app}>
-
-    <View style={styles.container}>
-      <View style={styles.flexBox}>
+    <View >
+{/* 
+    <View >
+      <View >
         <View >
-          <Text style={[{ color: "black" }]}>name: Snaa Medlij</Text>
-          <Text style={[{ color: "black" }]} >Bd: 24-01-2001</Text>
+          <Text style={styles.Colortext} >name: Snaa Medlij</Text>
+          <Text style={styles.Colortext} >Bd: 24-01-2001</Text>
         </View>
         <View style={styles.RedBox}></View>
       </View>
       <View style={styles.footer}> 
-        <Text style={[{ color: "black" }]} >My First UI</Text>
+        <Text style={styles.Colortext}  >My First UI</Text>
       </View>
-    </View>
+    </View> */}
+    <ScrollView>
+
+    {
+      clothes.map((item,index)=>{
+        return(
+          <ClothesItem key={index} size={item.size} Type={item.Type} color={item.color} ShopName={item.ShopName}/>
+        )
+      })
+    }
+    </ScrollView>
 
     </View>
   )
